@@ -27,7 +27,10 @@ const handleLogOut = ()=> {
    
     <>
       <li><Link to='/'>Home</Link></li>
-     <li><Link to='/allChat'>Chat Room</Link></li>
+     <li><Link to='/chatRoom/:id'>Chat Room</Link></li>
+     <li><Link to='/chatRoomList'>Chat Room List</Link></li>
+     {/* <li><Link to='/message'>Messages</Link></li> */}
+     
     
      
     

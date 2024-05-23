@@ -4,8 +4,11 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import ChatRoom from "../Pages/ChatRoom/ChatRoom";
+
+import ChatRoomList from "../Pages/ChatRoomList/ChatRoomList";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import Message from "../Pages/Message/Message";
 import SignUp from "../Pages/SignUp/SignUp";
 
  export const router = createBrowserRouter([
@@ -18,7 +21,7 @@ import SignUp from "../Pages/SignUp/SignUp";
             element: <Home></Home>
         },
         {
-            path: 'allChat',
+            path: 'chatRoom/:id',
             element: <ChatRoom></ChatRoom>
         },
         {
@@ -28,7 +31,16 @@ import SignUp from "../Pages/SignUp/SignUp";
         {
             path: 'signup',
             element: <SignUp></SignUp>
-        }
+        },
+        {
+          path: 'chatRoomList',
+          element: <ChatRoomList></ChatRoomList>
+        },
+        {
+          path: 'message',
+          element: <Message></Message>
+        },
+      
       ]
     },
   ]);
