@@ -2,7 +2,7 @@
   "name": "real-time-chat",
   "private": true,
   "version": "0.0.0",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://real-time-chat-server-lemon.vercel.app",
   "type": "module",
   "scripts": {
     "dev": "vite",

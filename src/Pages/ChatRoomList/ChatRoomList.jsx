@@ -10,7 +10,9 @@ const ChatRoomList = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const result = await axios.get('http://localhost:5000/rooms');
+        const result = await axios.get(
+          'https://real-time-chat-server-lemon.vercel.app/rooms'
+        );
         setRooms(Array.isArray(result.data) ? result.data : []);
       } catch (error) {
         console.error('Error fetching rooms:', error);
@@ -23,10 +25,13 @@ const ChatRoomList = () => {
   const handleCreateRoom = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.post('http://localhost:5000/rooms', {
-        name: newRoomName,
-        description: newRoomDescription,
-      });
+      const result = await axios.post(
+        'https://real-time-chat-server-lemon.vercel.app/rooms',
+        {
+          name: newRoomName,
+          description: newRoomDescription,
+        }
+      );
       setRooms((prevRooms) => [...prevRooms, result.data]);
       setNewRoomName('');
       setNewRoomDescription('');
@@ -37,7 +42,9 @@ const ChatRoomList = () => {
 
   return (
     <div className="p-4 pt-20">
-      <h1 className="text-2xl font-bold mb-4 text-center ">Chat Rooms Create & List</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center ">
+        Chat Rooms Create & List
+      </h1>
       <form onSubmit={handleCreateRoom} className="mb-4">
         <div>
           <label className="block font-semibold">Room Name:</label>
@@ -59,7 +66,10 @@ const ChatRoomList = () => {
             required
           />
         </div>
-        <button type="submit" className="mt-2 bg-blue-500 text-white p-2 rounded">
+        <button
+          type="submit"
+          className="mt-2 bg-blue-500 text-white p-2 rounded"
+        >
           Create Room
         </button>
       </form>
@@ -81,4 +91,3 @@ const ChatRoomList = () => {
 };
 
 export default ChatRoomList;
-
